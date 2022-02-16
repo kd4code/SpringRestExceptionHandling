@@ -17,14 +17,16 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @Configuration
 //@EnableAspectJAutoProxy
 @PropertySource("classpath:hibernate.properties")
-@ComponentScans(value = { @ComponentScan("com.DAO")})
+@ComponentScans(value = { @ComponentScan("com.DAO"),@ComponentScan("com.ExceptionClasses")})
 public class RootConfiguration {
 	@Autowired
 	 private Environment env;
+	
 
 	 @Bean
 	 public LocalSessionFactoryBean getSessionFactory() {

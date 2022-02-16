@@ -19,7 +19,7 @@ public class PersonController {
 	PersonDAO pd;
     
     @PostMapping("/register") 
-    public ResponseEntity resgister(@RequestBody Person p)
+    public ResponseEntity resgister(@RequestBody Person p)throws IDExistException,NotValidAgeException
     {
     	
 //**********With Try Catch***********    	
